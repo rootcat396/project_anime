@@ -1,0 +1,485 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main: rgb(8, 13, 11);
+    --skin: rgb(255, 219, 172);
+    --nose: rgba(0, 0, 0, 0.195);
+    --neck: rgba(255, 213, 150, 0.927);
+    --ear: rgba(255, 225, 180, 0.927);
+    --sclera: rgb(255, 255, 255);
+    --iris: #81eab2;
+    --iris-border: #703000;
+    --pupil: #17231e;
+    --brows: #380c01;
+    --ear-border: rgb(224, 172, 105);
+    /* --hair-color: rgb(51, 11, 11); */
+    --hair-color: rgb(50, 24, 24);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: var(--main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head {
+    width: 200px;
+    height: 250px;
+    background: var(--skin);
+    border-radius: 100% 100% / 20% 20% 140% 140%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-right: 2px solid rgba(0, 0, 0, 0.125);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.axis {
+    position: absolute;
+    width: 2px;
+    height: 600px;
+    background: #fff;
+    /* background: #000; */
+}
+
+.hairBase {
+    position: absolute;
+    z-index: -2;
+    width: 212px;
+    height: 301px;
+    margin-top: -68px;
+    background: var(--hair-color);
+    border-radius: 100% 100% / 60% 60% 156% 156%;
+}
+
+.hair1 {
+    position: absolute;
+    width: 150px;
+    height: 68px;
+    background: var(--hair-color);
+    border-radius: 100% 0 100% 0;
+    margin-top: -294px;
+    transform: skew(-23deg, 10deg) rotate(36deg);
+    margin-right: -148px;
+}
+
+.hair1::before {
+    content: '';
+    position: absolute;
+    width: 123px;
+    height: 38px;
+    border-top: 16px solid var(--hair-color);
+    border-radius: 100% 100% / 167% 167% 27% 6%;
+    margin-top: 31px;
+    transform: skew(-23deg, 10deg) rotate(170deg);
+    margin-left: 26px;
+}
+
+.hair1::after {
+    content: '';
+    position: absolute;
+    width: 75px;
+    height: 13px;
+    /* background: #380c0190; */
+    background: var(--hair-color);
+    border-radius: 100% 100% / 104% 44% 51% 97%;
+    margin-top: 46px;
+    margin-left: 121px;
+    transform: skew(-15deg, 7deg) rotate(208deg);
+}
+
+.hair2 {
+    position: absolute;
+    width: 150px;
+    height: 68px;
+    background: var(--hair-color);
+    border-radius: 0 100% 0 100%;
+    margin-top: -294px;
+    transform: skew(23deg, -10deg) rotate(-36deg);
+    margin-left: -148px;
+}
+
+.hair2::before {
+    content: '';
+    position: absolute;
+    width: 75px;
+    height: 13px;
+    /* background: #380c0190; */
+    background: var(--hair-color);
+    border-radius: 100% 100% / 1% 75% 78% 36%;
+    margin-top: 49px;
+    margin-left: -47px;
+    transform: skew(-14deg, 12deg) rotate(-231deg);
+}
+
+.hair3 {
+    position: absolute;
+    width: 167px;
+    height: 68px;
+    background: var(--hair-color);
+    border-radius: 100% 0 100% 0;
+    margin-top: -329px;
+    transform: skew(-23deg, 10deg) rotate(21deg);
+    margin-right: -183px;
+}
+
+.hair3::before {
+    content: '';
+    position: absolute;
+    width: 78px;
+    height: 61px;
+    /* background: #380c0190; */
+    background: var(--hair-color);
+    border-radius: 100% 100% / 74% 133% 78% 116%;
+    margin-top: 82px;
+    margin-left: -53px;
+    transform: skew(-3deg, 8deg) rotate(-199deg);
+}
+
+.hair3::after {
+    content: '';
+    position: absolute;
+    width: 42px;
+    height: 34px;
+    /* background: #380c0190; */
+    background: var(--hair-color);
+    border-radius: 100% 100% / 74% 133% 78% 116%;
+    margin-top: 76px;
+    margin-left: 18px;
+    transform: skew(-3deg, 8deg) rotate(122deg);
+}
+
+.hair4 {
+    position: absolute;
+    width: 167px;
+    height: 68px;
+    background: var(--hair-color);
+    border-radius: 0 100% 0 100%;
+    margin-top: -329px;
+    transform: skew(23deg, -10deg) rotate(-21deg);
+    margin-left: -183px;
+}
+
+.hair5 {
+    position: absolute;
+    width: 123px;
+    height: 68px;
+    background: var(--hair-color);
+    border-radius: 100% 0 100% 0;
+    margin-top: -383px;
+    transform: skew(-23deg, 10deg) rotate(8deg);
+    margin-right: -148px;
+}
+
+.hair6 {
+    position: absolute;
+    width: 123px;
+    height: 68px;
+    background: var(--hair-color);
+    border-radius: 0 100% 0 100%;
+    margin-top: -383px;
+    transform: skew(23deg, -10deg) rotate(-8deg);
+    margin-left: -148px;
+}
+
+.hair7 {
+    position: absolute;
+    width: 70px;
+    height: 94px;
+    border-right: 12px solid var(--hair-color);
+    transform: rotate(22deg);
+    border-radius: 57% 57% 100% 100%;
+    margin-top: -244px;
+    margin-left: -90px;
+}
+
+.hair7::after {
+    content: '';
+    position: absolute;
+    width: 23px;
+    height: 77px;
+    border-right: 7px solid var(--hair-color);
+    transform: rotate(-17deg);
+    border-radius: 57% 57% 100% 100%;
+    margin-top: 5px;
+    margin-left: 47px;
+}
+
+.hair8 {
+    position: absolute;
+    width: 91px;
+    height: 104px;
+    background: var(--hair-color);
+    border-radius: 0 100% 0 100%;
+    margin-top: -380px;
+    transform: skew(-1deg, -10deg) rotate(1deg);
+    margin-left: -60px;
+}
+
+.hair8::before {
+    content: '';
+    position: absolute;
+    width: 115px;
+    height: 70px;
+    margin-top: 9px;
+    margin-left: 59px;
+    background: var(--hair-color);
+    border-radius: 100% 0 100% 0;
+    transform: skew(27deg, -10deg) rotate(27deg);
+}
+
+.hair8::after {
+    content: '';
+    position: absolute;
+    width: 66px;
+    height: 72px;
+    background: var(--hair-color);
+    border-radius: 100% 100% / 170% 170% 41% 23%;
+    margin-top: -16px;
+    transform: skew(-2deg, -4deg) rotate(113deg);
+    margin-left: 22px;
+}
+
+.eyes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-top: -20%;
+}
+
+.eye {
+    width: 65px;
+    height: 30px;
+    background: var(--sclera);
+    border-radius: 100%;
+    border-top: 4px solid var(--iris-border);
+    border-bottom: 2px solid var(--iris-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.eye::before {
+    content: '';
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: var(--iris);
+    border-radius: 100%;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.eye::after {
+    content: '';
+    background: var(--pupil);
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin-left: 15px;
+    margin-bottom: 6px;
+}
+
+.eyeshine {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--sclera);
+    border-radius: 100%;
+    margin-right: -21px;
+    margin-bottom: 8px;
+    z-index: 2;
+}
+
+.brow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 180px;
+    position: absolute;
+    margin-bottom: 80px;
+}
+
+.brow::before {
+    content: '';
+    width: 65px;
+    height: 5px;
+    border-top: 6px solid black;
+    border-radius: 67% 6px 0 0;
+}
+
+.brow::after {
+    content: '';
+    width: 65px;
+    height: 5px;
+    border-top: 6px solid black;
+    border-radius: 6px 67% 0 0;
+}
+
+.ears {
+    /* background: red; */
+    width: 237px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: -2;
+}
+
+.ear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ear:first-child {
+    position: relative;
+    overflow: hidden;
+    background: var(--ear);
+    width: 45px;
+    height: 78px;
+    border-radius: 50%;
+    transform: rotate(-28deg);
+    border-top: 6px solid var(--ear-border);
+    border-left: 2px solid var(--ear-border);
+}
+
+.ear:last-child {
+    position: relative;
+    overflow: hidden;
+    background: var(--ear);
+    width: 45px;
+    height: 78px;
+    border-radius: 50%;
+    transform: rotate(28deg);
+    border-top: 6px solid var(--ear-border);
+    border-right: 2px solid var(--ear-border);
+}
+
+.ear:first-child::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ear-border);
+    transform: rotate(28deg);
+}
+
+.ear:last-child::after {
+    content: '';
+    position: absolute;
+    position: absolute;
+    width: 10px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ear-border);
+    transform: rotate(-28deg);
+}
+
+.emotion {
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    margin-top: 13px;
+    background: #f002;
+    border-radius: 20% 20% 100% 100%;
+    filter: blur(10px);
+}
+
+.nose {
+    position: absolute;
+    background: var(--nose);
+    margin-top: 42px;
+    width: 34px;
+    height: 95px;
+    clip-path: polygon(50% 0%, 100% 76%, 50% 90%, 0 76%, 52% 80%);
+}
+
+.mouth {
+    position: absolute;
+    width: 65px;
+    height: 24px;
+    margin-top: 150px;
+    position: absolute;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.271);
+    border-top: none;
+    border-radius: 58%;
+}
+
+.neck {
+    position: absolute;
+    z-index: -1;
+    background: var(--neck);
+    /* background: red; */
+    width: 83px;
+    height: 136px;
+    margin-top: 252px;
+    border-radius: 0 0 36% 36%;
+}
+
+.neck::before {
+    content: '';
+    position: absolute;
+    background: var(--skin);
+    /* background: red; */
+    width: 83px;
+    height: 66px;
+    margin-top: 75px;
+    border-radius: 28% 28% 50% 50%;
+}
+
+.shirt {
+    position: absolute;
+    z-index: -3;
+    width: 469px;
+    height: 130px;
+    margin-top: 422px;
+    background: lightblue;
+    /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+    clip-path: polygon(50% 0%, 87% 41%, 92% 100%, 8% 100%, 13% 41%);
+}
+
+.collor {
+    position: absolute;
+    width: 142px;
+    margin-top: 378px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collor::before {
+    content: '';
+    width: 91px;
+    height: 92px;
+    background: var(--sclera);
+    clip-path: polygon(17% 16%, 40% 7%, 76% 59%, 43% 100%);
+    box-shadow: inset 13px 7px 29px -1px rgba(36, 36, 36, 0.41), inset -1px -1px 10px 5px rgba(36, 36, 36, 0.41);
+}
+
+.collor::after {
+    content: '';
+    width: 91px;
+    height: 92px;
+    background: var(--sclera);
+    clip-path: polygon(83% 16%, 60% 7%, 24% 59%, 57% 100%);
+    box-shadow: inset 13px 7px 29px -1px rgba(36, 36, 36, 0.41), inset -1px -1px 10px 5px rgba(36, 36, 36, 0.41);
+}
